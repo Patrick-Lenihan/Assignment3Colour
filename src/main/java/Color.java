@@ -48,15 +48,20 @@ public class Color {
         this.amountBlue = (int) (amountBlue*255);
     }
 
+    /**
+     * the constructor for Color
+     * @param rgbBinary A binary int with
+     *                  red component in bits 16-23,
+     *                  the green component in bits 8-15,
+     *                  and the blue component in bits 0-7
+     */
     public Color(int rgbBinary){
-        this.amountRed = getColorFromBin(rgbBinary, 17,0B111111110000000000000000);
-
+        this.amountBlue = getColorFromBin(rgbBinary, 17,0B1111111110000000000000000);
     }
 
     private int getColorFromBin(int rgbBinary, int shift,int mask){
         rgbBinary = rgbBinary & mask;
         rgbBinary = rgbBinary >> shift;
-        rgbBinary = rgbBinary + 128;
         return rgbBinary;
     }
     /**
