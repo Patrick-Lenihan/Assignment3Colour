@@ -56,12 +56,13 @@ public class Color {
      *                  and the blue component in bits 0-7
      */
     public Color(int rgbBinary){
-        this.amountBlue = getColorFromBin(rgbBinary, 17,0B1111111110000000000000000);
+        this.amountBlue = getColorFromBin(rgbBinary, 16,0B1111111110000000000000000);
     }
 
     private int getColorFromBin(int rgbBinary, int shift,int mask){
         rgbBinary = rgbBinary & mask;
         rgbBinary = rgbBinary >> shift;
+        System.out.println(Integer.toBinaryString(rgbBinary));
         return rgbBinary;
     }
     /**

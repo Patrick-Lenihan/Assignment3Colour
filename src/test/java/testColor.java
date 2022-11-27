@@ -42,12 +42,10 @@ public class testColor {
     @Test
     void testConstructorCanTakeInOneValue(){
         try {
-            Color rgbColorInstance = new Color(0B1111111101011001000000000);
+            Color rgbColorInstance = new Color(0B111111110101100100000000);
 
             assertEquals(255, rgbColorInstance.getBlue(), "blue colors do not match");
-            //assertEquals(50, rgbColorInstance.getGreen(), "green colors do not match");
-            //assertEquals(0, rgbColorInstance.getRed(), "red colors do not match");
-            rgbColorInstance = new Color(0B10000000000000000000000);
+            rgbColorInstance = new Color(0B100000000000000000000000);
             assertEquals(128, rgbColorInstance.getBlue(), "blue colors do not match");
 
         }catch (IllegalArgumentException e){
