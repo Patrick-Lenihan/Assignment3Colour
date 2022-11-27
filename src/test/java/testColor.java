@@ -42,7 +42,7 @@ public class testColor {
     @Test
     void testConstructorCanTakeInOneValue(){
         try {
-            Color rgbColorInstance = new Color(0B1111111101100100000000);
+            Color rgbColorInstance = new Color(0B1111111101011001000000000);
 
             assertEquals(255, rgbColorInstance.getRed(), "red colors do not match");
             assertEquals(50, rgbColorInstance.getGreen(), "green colors do not match");

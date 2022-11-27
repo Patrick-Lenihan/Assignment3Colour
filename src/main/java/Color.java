@@ -48,6 +48,17 @@ public class Color {
         this.amountBlue = (int) (amountBlue*255);
     }
 
+    public Color(int rgbBinary){
+        this.amountRed = getColorFromBin(rgbBinary, 17,0B111111110000000000000000);
+
+    }
+
+    private int getColorFromBin(int rgbBinary, int shift,int mask){
+        rgbBinary = rgbBinary & mask;
+        rgbBinary = rgbBinary >> shift;
+        rgbBinary = rgbBinary + 128;
+        return rgbBinary;
+    }
     /**
      * the getter for amountRed
      *
