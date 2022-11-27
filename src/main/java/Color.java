@@ -32,7 +32,7 @@ public class Color {
      *                  this class represents.
      */
     public Color(float amountRed, float amountGreen, float amountBlue){
-        this.amountRed = (int) amountRed*255;
+        this.amountRed = (int) (amountRed*255);
         this.amountGreen = (int) (amountGreen*255);
         this.amountBlue = (int) (amountBlue*255);
     }
