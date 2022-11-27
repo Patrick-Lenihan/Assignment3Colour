@@ -25,7 +25,7 @@ public class testColor {
     }
     @ParameterizedTest
     @ValueSource(floats={(float) 1.1,(float) -0.1})
-    void constructorShouldNotAcceptOutOfRangeValues(float outOfRangeVal){
+    void testConstructorShouldNotAcceptOutOfRangeValues(float outOfRangeVal){
 
         Exception checkRedOutOfRange = assertThrows(IllegalArgumentException.class, () ->
                 new Color(outOfRangeVal,(float)0.12549019607,(float) 0.1294117647));
@@ -39,5 +39,17 @@ public class testColor {
                 new Color((float)1.0,(float)0.12549019607,outOfRangeVal));
         assertEquals("value must be between 0 and 1", checkBlueOutOfRange.getMessage());
     }
+    @Test
+    void testConstructorCanTakeInOneValue(){
+        try {
+            Color rgbColorInstance = new Color(0B1111111101100100000000);
 
+            assertEquals(255, rgbColorInstance.getRed(), "red colors do not match");
+            assertEquals(50, rgbColorInstance.getGreen(), "green colors do not match");
+            assertEquals(0, rgbColorInstance.getBlue(), "blue colors do not match");
+        }catch (IllegalArgumentException e){
+            throw new RuntimeException(e);
+        }
+
+    }
 }
