@@ -31,11 +31,11 @@ public class Color {
      * @param amountBlue the amount of red in the color
      *                  this class represents.
      */
-    public Color(float amountRed, float amountGreen, float amountBlue) throws IllegalParamException{
+    public Color(float amountRed, float amountGreen, float amountBlue) throws IllegalArgumentException{
         float[] params ={amountRed,amountBlue,amountGreen};
         for (int i = 0; i <= 3; i ++) {
             if (params[i] < 0.0 || 1.0 < params[i]) {
-                throw new IllegalParamException("value must be between 0 and 1");
+                throw new IllegalArgumentException("value must be between 0 and 1");
             }
         }
         this.amountRed = (int) (amountRed*255);
