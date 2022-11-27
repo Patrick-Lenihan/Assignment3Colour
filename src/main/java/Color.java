@@ -25,11 +25,16 @@ public class Color {
     /**
      * this is a contructor for Color
      * @param amountRed the amount of red in the color
-     *                  this class represents.
+     *                  this class represents. Must be in
+     *                  range between 0.0 to 0.1.
      * @param amountGreen the amount of green in the color
-     *                  this class represents.
+     *                  this class represents.Must be in
+     *                  range between 0.0 to 0.1.
      * @param amountBlue the amount of red in the color
-     *                  this class represents.
+     *                  this class represents.Must be in
+     *                  range between 0.0 to 0.1.
+     * @throws IllegalArgumentException when the arguments are not
+     * in the correct range of 0.0 to 0.1
      */
     public Color(float amountRed, float amountGreen, float amountBlue) throws IllegalArgumentException{
         float[] params ={amountRed,amountBlue,amountGreen};
