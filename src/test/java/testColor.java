@@ -22,15 +22,15 @@ public class testColor {
     @ValueSource(floats={(float) 1.1,(float) -0.1})
     void constructorShouldNotAcceptOutOfRangeValues(float outOfRangeVal){
 
-        Exception checkRedOutOfRange = assertThrows(IllegalArgumentException.class, () ->
+        Exception checkRedOutOfRange = assertThrows(IllegalParamException.class, () ->
                 new Color(outOfRangeVal,(float)0.12549019607,(float) 0.1294117647));
         assertEquals("value must be between 0 and 1", checkRedOutOfRange.getMessage());
 
-        Exception checkGreenOutOfRange = assertThrows(IllegalArgumentException.class, () ->
+        Exception checkGreenOutOfRange = assertThrows(IllegalParamException.class, () ->
                 new Color((float)1.0,outOfRangeVal,(float) 0.1294117647));
         assertEquals("value must be between 0 and 1", checkGreenOutOfRange.getMessage());
 
-        Exception checkBlueOutOfRange = assertThrows(IllegalArgumentException.class, () ->
+        Exception checkBlueOutOfRange = assertThrows(IllegalParamException.class, () ->
                 new Color((float)1.0,(float)0.12549019607,outOfRangeVal));
         assertEquals("value must be between 0 and 1", checkBlueOutOfRange.getMessage());
     }
