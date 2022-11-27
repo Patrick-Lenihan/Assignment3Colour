@@ -45,8 +45,11 @@ public class testColor {
             Color rgbColorInstance = new Color(0B111111110101100100000000);
 
             assertEquals(255, rgbColorInstance.getBlue(), "blue colors do not match");
+            assertEquals(50, rgbColorInstance.getGreen(), "green colors do not match");
             rgbColorInstance = new Color(0B100000000000000000000000);
             assertEquals(128, rgbColorInstance.getBlue(), "blue colors do not match");
+
+
 
         }catch (IllegalArgumentException e){
             throw new RuntimeException(e);
