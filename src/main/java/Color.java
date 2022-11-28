@@ -60,6 +60,7 @@ public class Color {
         this.amountBlue = getColorFromBin(rgbBinary, 16,0B111111110000000000000000);
         System.out.println(Integer.toBinaryString(rgbBinary));
         this.amountGreen = getColorFromBin(rgbBinary,8,0B000000001111111100000000);
+        this.amountRed = getColorFromBin(rgbBinary,0,0B000000000000000011111111);
     }
 
     private int getColorFromBin(int rgbBinary, int shift,int mask){
