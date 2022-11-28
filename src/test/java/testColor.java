@@ -57,4 +57,10 @@ public class testColor {
         }
 
     }
+    @Test
+    void testConstructorThrowsException(){
+        Exception checkInputTooLong = assertThrows(IllegalArgumentException.class, () ->
+                new Color(0B1000000000000000000000000));
+        assertEquals("binary value not the correct length", checkInputTooLong.getMessage());
+    }
 }
