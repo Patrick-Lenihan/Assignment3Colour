@@ -82,6 +82,17 @@ public class Color {
         rgbBinary = rgbBinary >> shift;
         return rgbBinary;
     }
+
+    /**
+     * the equals method for color that returns
+     * true if both the colors stored in each
+     * object are the same.
+     * @param o the object to compare this color
+     *          to
+     * @return true if both the colors stored in each
+     *          object are the same.
+     *          false otherwise.
+     */
     @Override
     public boolean equals(Object o){
         if (this == o) return true;
