@@ -38,7 +38,7 @@ public class Color {
      */
     public Color(float amountRed, float amountGreen, float amountBlue) throws IllegalArgumentException{
         float[] params ={amountRed,amountBlue,amountGreen};
-        for (int i = 0; i <= 3; i ++) {
+        for (int i = 0; i <= 2; i ++) {
             if (params[i] < 0.0 || 1.0 < params[i]) {
                 throw new IllegalArgumentException("value must be between 0 and 1");
             }
@@ -81,6 +81,18 @@ public class Color {
         rgbBinary = rgbBinary & mask;
         rgbBinary = rgbBinary >> shift;
         return rgbBinary;
+    }
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if(o== null || getClass() != o.getClass()) return false;
+
+        Color that = (Color) o;
+
+        boolean redEqual = amountRed == that.getRed();
+        boolean blueEqual = amountBlue == that.getBlue();
+        boolean greenEqual = amountGreen == that.getGreen();
+        return redEqual && blueEqual && greenEqual;
     }
     /**
      * the getter for amountRed

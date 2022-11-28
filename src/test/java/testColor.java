@@ -63,4 +63,13 @@ public class testColor {
                 new Color(0B1000000000000000000000000));
         assertEquals("binary value not the correct length", checkInputTooLong.getMessage());
     }
+
+    @Test
+    void testIsColorEquals(){
+        Color rgbColorInstance = new Color((float) 1.0, (float) 0.12549019607, (float) 0.1294117647);
+        String message = "colors that are the same do not show up as equal";
+        assertEquals(new Color((float) 1.0, (float) 0.12549019607, (float) 0.1294117647),rgbColorInstance,message);
+
+
+    }
 }
