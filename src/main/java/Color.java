@@ -55,7 +55,11 @@ public class Color {
      *                  the green component in bits 8-15,
      *                  and the blue component in bits 0-7
      */
-    public Color(int rgbBinary){
+    public Color(int rgbBinary)throws IllegalArgumentException{
+        if( 16777216 <= rgbBinary){
+            throw new IllegalArgumentException("binary value not the correct length");
+        }
+
         this.amountBlue = getColorFromBin(rgbBinary, 16,0B111111110000000000000000);
         this.amountGreen = getColorFromBin(rgbBinary,8,0B000000001111111100000000);
         this.amountRed = getColorFromBin(rgbBinary,0,0B000000000000000011111111);
