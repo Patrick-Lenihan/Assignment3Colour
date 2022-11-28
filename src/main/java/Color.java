@@ -50,7 +50,7 @@ public class Color {
 
     /**
      * the constructor for Color
-     * @param rgbBinary A binary int with
+     * @param rgbBinary An int of bit length 24 with
      *                  red component in bits 16-23,
      *                  the green component in bits 8-15,
      *                  and the blue component in bits 0-7
@@ -64,6 +64,18 @@ public class Color {
         this.amountGreen = getColorFromBin(rgbBinary,8,0B000000001111111100000000);
         this.amountRed = getColorFromBin(rgbBinary,0,0B000000000000000011111111);
     }
+
+    /**
+     * applies a mask and shifts to obtain a color
+     * from a binary sequence.
+     * @param rgbBinary the inputted binary number
+     *                  that contains the colors
+     * @param shift the amount to shift in order
+     *              to extract the number
+     * @param mask the mask that remove the other
+     *             colors binary numbers
+     * @return the extracted colors number value
+     */
 
     private int getColorFromBin(int rgbBinary, int shift,int mask){
         rgbBinary = rgbBinary & mask;
